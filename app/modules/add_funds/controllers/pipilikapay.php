@@ -137,9 +137,9 @@ class pipilikapay extends MX_Controller
 		    );
 		    $url = curl_init("$panel_URL/payment/api/verify_payment");                     
         
-            curl_setopt($ch, CURLOPT_POST, 1);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $requestbody);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($url, CURLOPT_POST, 1);
+            curl_setopt($url, CURLOPT_POSTFIELDS, $requestbody);
+            curl_setopt($url, CURLOPT_RETURNTRANSFER, true);
 		    $resultdata = curl_exec($url);
 		    curl_close($url);
 

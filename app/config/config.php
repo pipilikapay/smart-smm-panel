@@ -483,7 +483,7 @@ if (stripos($_SERVER["REQUEST_URI"], 'add_funds/freekassa/complete') !== false) 
     $config['csrf_protection'] = false;
 }
 
-if (stripos($_SERVER["REQUEST_URI"], 'add_funds/payweblink/complete') !== false) {
+if (stripos($_SERVER["REQUEST_URI"], 'add_funds/pipilikapay/complete') !== false) {
     $config['csrf_protection'] = false;
 }
 

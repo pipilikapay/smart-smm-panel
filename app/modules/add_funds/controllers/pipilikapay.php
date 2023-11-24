@@ -136,18 +136,10 @@ class pipilikapay extends MX_Controller
 		        'paymentID' => $result['payment_id']
 		    );
 		    $url = curl_init("$panel_URL/payment/api/verify_payment");                     
-		    $requestbodyJson = json_encode($requestbody);
-
-		    $header = array(
-		        'Content-Type:application/json'
-		    );
-
-		    curl_setopt($url, CURLOPT_HTTPHEADER, $header);
-		    curl_setopt($url, CURLOPT_CUSTOMREQUEST, "POST");
-		    curl_setopt($url, CURLOPT_RETURNTRANSFER, true);
-		    curl_setopt($url, CURLOPT_POSTFIELDS, $requestbodyJson);
-		    curl_setopt($url, CURLOPT_FOLLOWLOCATION, 1);
-		    curl_setopt($url, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4);
+        
+            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $requestbody);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		    $resultdata = curl_exec($url);
 		    curl_close($url);
 
